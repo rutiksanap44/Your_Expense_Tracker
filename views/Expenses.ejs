@@ -6,13 +6,24 @@
     </head>
     <body>
         <%= "Hello" %>
+        <header>
+            <form action="/create_expense" method="POST">
+                <label for="name1">Expense Name</label>
+                <input type="text" name="name1" id="name1">
+
+                <label for="amount">Expense Name</label>
+                <input type="text" name="amount" id="amount">
+                <button type="submit">Add Expense</button>
+            </form>
+        </header>
         <main>
             <div class="expense_list">
                 <ol>
                     <% for(let i of expense_list){ %>
                         <li>
-                            <p><%= i.name %></p>
+                            <p><%= i.name1 %></p>
                             <p><%= i.amount %></p>
+                            <p><a href="/delete-expense/?id=<%= i._id%>">delete Expense</a></p>
                         </li>
                     <%}%>
                 </ol>
