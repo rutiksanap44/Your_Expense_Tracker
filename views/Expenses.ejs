@@ -1,0 +1,22 @@
+<html>
+    <head>
+        <title>
+            <%= title %>
+        </title>
+    </head>
+    <body>
+        <%= "Hello" %>
+        <main>
+            <div class="expense_list">
+                <ol>
+                    <% for(let i of expense_list){ %>
+                        <li>
+                            <p><%= i.name %></p>
+                            <p><%= i.amount %></p>
+                        </li>
+                    <%}%>
+                </ol>
+            </div> 
+        </main>
+    </body>
+</html>
